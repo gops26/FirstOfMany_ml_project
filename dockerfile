@@ -1,6 +1,6 @@
 FROM python:3.8-alpine
 WORKDIR /app
 COPY . /app
-RUN apt update -y 
-RUN apt-get update && pip install -r requirements.txt
+USER root
+RUN apt update && apt install -y awscli
 CMD ["python3", "app.py"]
